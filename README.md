@@ -5,6 +5,7 @@
 In this tutorial, we will use Bytewax as the basis to create a pipeline that will retrieve new hackernews posts, parallelize the parsing and creation of embeddings to be fed into Milvus, our vector database.
 
 ## Dataflow
+![dataflow](https://github.com/bytewax/real-time-milvus/blob/main/dataflow.png)
 
 The dataflow has 5 parts:
 * Input - stream stories and comments from [HackerNews API](https://github.com/HackerNews/API).
