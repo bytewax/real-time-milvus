@@ -16,6 +16,8 @@ The dataflow has 5 parts:
 
 
 ## Setting up your environment
+Recommended with Python 3.11.
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -34,5 +36,9 @@ python -m pip install "milvus[client]"
 ```
 
 ### Milvus CLI
-[Milvus Command-Line Interface (CLI)](https://milvus.io/docs/cli_overview.md) is a command-line tool that supports database connection, data operations, and import and export of data.
-So you can run queries and see if the data goes through the pipeline.
+[Milvus Command-Line Interface (CLI)](https://milvus.io/docs/cli_overview.md) is a command-line tool that supports database connection, data operations, and import and export of data. So you can run queries and see if the data goes through the pipeline.
+Install with
+
+```bash
+pip install milvus-cli
+```
