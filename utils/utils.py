@@ -17,7 +17,7 @@ from unstructured.staging.huggingface import stage_for_transformers
 
 import logging
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
 
 pattern = re.compile("<.*?>")
@@ -47,11 +47,11 @@ def safe_request(url, headers={}, wait_time=1, max_retries=3):
             html = response.content
             break
         except RequestException as e:
-            logger.info(f"Request failed (attempt {i + 1}/{max_retries}): {e}")
+            logger.warning(f"Request failed (attempt {i + 1}/{max_retries}): {e}")
             if i == max_retries:
-                logger.info(f"skipping url {url}")
+                logger.warning(f"skipping url {url}")
                 html = None
-            logger.info(f"Retrying in {current_wait_time} seconds...")
+            logger.warning(f"Retrying in {current_wait_time} seconds...")
             time.sleep(current_wait_time)
             i += 1
     return html
@@ -71,9 +71,9 @@ def prep_text(metadata_content, tokenizer):
 
 def parse_html(metadata_content, tokenizer):
     try:
-        logger.info(
-            f"parsing content from: {metadata_content['url']} - {metadata_content['content'][:200]}"
-        )
+        # logger.info(
+        #     f"parsing content from: {metadata_content['url']} - {metadata_content['content'][:200]}"
+        # )
 
         text = []
         article_elements = partition_html(text=metadata_content["content"])
@@ -102,7 +102,7 @@ def parse_html(metadata_content, tokenizer):
         metadata_content.pop("content")
         return {**metadata_content, "text": text}
     except TypeError:
-        logger.info(f"moving on... can't parse: {metadata_content}")
+        logger.warning(f"moving on... can't parse: {metadata_content}")
         return None
 
 
