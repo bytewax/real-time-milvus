@@ -12,7 +12,7 @@ The dataflow has 5 parts:
 * Preprocess - retrieve updates and filter for stories/comments.
 * Retrieve Content - download the html and parse it into useable text. Thanks to awesome [Unstructured.io](https://github.com/Unstructured-IO/unstructured).
 * Vectorize - Create an embedding or list of embeddings for text using [Hagging Face Transformers](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
-* Output - write the vectors to [Milvus]() and create a new index
+* Output - write the vectors to [Milvus](https://github.com/milvus-io/milvus) and create a new index
 
 
 ## Setting up your environment
