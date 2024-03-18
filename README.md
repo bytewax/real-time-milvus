@@ -1,6 +1,8 @@
 
 #  Stream, Process, Embed, Repeat
 
+Please see our [website](https://bytewax.io/blog/stream-process-embed-repeat) for the latest updates on this topic. 
+
 ## Your takeaway
 In this tutorial, we will use Bytewax as the basis to create a pipeline that will retrieve new hackernews posts, parallelize the parsing and creation of embeddings to be fed into Milvus, our vector database.
 
